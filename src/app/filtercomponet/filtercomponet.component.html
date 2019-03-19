@@ -1,0 +1,75 @@
+<!-- <input type="checkbox" (change) = "filterTasks($event)" value="Night">Night<br>
+<input type="checkbox" (change) = "filterTasks($event)" value="Day">Day
+<br><br>
+<input type="checkbox" (change) = "filterTas($event)" value="nasa">Nasa<br>
+<input type="checkbox" (change) = "filterTas($event)" value="isro">Isro
+<br><br>
+<input type="checkbox" (change) = "filterPricee($event)" value="500">500<br>
+<input type="checkbox" (change) = "filterPricee($event)" value="1000">1000
+<br><br>
+<table>
+  <div *ngIf="!(isroChecked  || nasaChecked || dayChecked || nightChecked || pricefivehudred || pricethousand)">
+    online
+  <tr *ngFor="let task of tasks">
+    <td>{{task.type}}</td>
+    <td>{{task.id}}</td>
+    <td>{{task.val}}</td>
+    <td>{{task.price}}</td>
+  </tr>
+  </div>
+  <div *ngIf="show1">
+    filter
+  <tr *ngFor="let task of filteredTasks">
+    <td>{{task.type}}</td>
+    <td>{{task.id}}</td>
+    <td>{{task.val}}</td>
+    <td>{{task.price}}</td>
+  </tr>
+  </div><br>
+  <div *ngIf="((show2 && (isroChecked  || nasaChecked))) || (((isroChecked || nasaChecked) && (!pricethousand && !pricefivehudred)))">
+      filterbyfilter
+    <tr *ngFor="let task of filterd">
+      <td>{{task.type}}</td>
+      <td>{{task.id}}</td>
+      <td>{{task.val}}</td>
+      <td>{{task.price}}</td>
+    </tr>
+    </div><br>
+    <div *ngIf="show3 && (pricethousand || pricefivehudred)">
+        filterbyprice
+      <tr *ngFor="let task of filterPrices">
+        <td>{{task.type}}</td>
+        <td>{{task.id}}</td>
+        <td>{{task.val}}</td>
+        <td>{{task.price}}</td>
+      </tr>
+      </div>
+</table> -->
+
+
+
+  <div *ngFor="let s of appointmentStatus">
+    <input type="checkbox" [(ngModel)]="s.checked" (change)="updateFilter(s.checked?s:s)">
+  <label>  {{s.status}}</label>
+  </div>
+  <div *ngFor="let s of appointmentStatus1">
+      <input type="checkbox" [(ngModel)]="s.checked" (change)="updateFilter1(s.checked?s:'B')">
+    <label>  {{s.status}}</label>
+    </div>
+  <hr>
+  <div *ngIf="test1 && (test2)">
+      <h3>Appointments: </h3>
+  <div *ngFor="let a of todaysAppointments">
+      
+         
+    ID: {{a.id}}, STATUS: {{a.status}},Type:{{a.type}}
+  </div>
+  </div>
+  hitest1{{test1}}
+ helotest2  {{test2}}
+  <div *ngIf="test2 && (!test1)">
+  <h3>Appointments2222: </h3>
+  <div *ngFor="let a of todaysapp">
+    ID: {{a.id}}, STATUS: {{a.status}},Type:{{a.type}}
+  </div>
+</div>
