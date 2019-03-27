@@ -20,7 +20,10 @@ import { FiltercomponetComponent } from './filtercomponet/filtercomponet.compone
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { AlertModule } from 'ngx-bootstrap/alert';
-
+import { NgxHmCarouselModule } from 'ngx-hm-carousel';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { EmailComponent } from './email/email.component';
+import { EmailService } from './email.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,8 @@ import { AlertModule } from 'ngx-bootstrap/alert';
     AutocompleteComponent,
     EditComponent,
     FilterNamePipe,
-    FiltercomponetComponent
+    FiltercomponetComponent,
+    EmailComponent
   ],
   imports: [
     BrowserModule,
@@ -44,9 +48,11 @@ import { AlertModule } from 'ngx-bootstrap/alert';
     MaterialmoduleModule,
     ButtonsModule,
     AccordionModule.forRoot(),
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    NgxHmCarouselModule,
+     NgxChartsModule,
   ],
-  providers: [SelectService],
+  providers: [SelectService, EmailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

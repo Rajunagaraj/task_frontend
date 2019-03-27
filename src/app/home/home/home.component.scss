@@ -73,7 +73,7 @@
         border-right-style: none;
         border-right-width: medium;
 }*/
-.register{
+/*.register{
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
     margin-top: 3%;
     padding: 3%;
@@ -175,4 +175,42 @@
     }
      input.ng-valid{
         border-left: 5px solid green; 
+    }*/
+/*//carousael*/
+.aniAuto{
+  transition: all 3s linear;
+}
+
+.carousel {
+  .content {
+    display: flex;
+
+    .item {
+      width: 100%;
+      display: block;
+      .img {
+        width: 100%;
+        display: block;
+        background-size: cover;
+        background-position: center;
+        height: 0;
+        padding-bottom: 50%;
+      }
     }
+
+
+  }
+
+  .ball {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff5252;
+    border: 2px solid white;
+    opacity: 0.5;
+
+    &.visible {
+      opacity: 1;
+    }
+  }
+}

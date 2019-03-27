@@ -30,7 +30,7 @@
                 </form>
               </article>
             </section></div> -->
-<div class="container register">
+<!-- <div class="container register">
   <div class="row">
     <div class="col-md-3 register-left">
       <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
@@ -157,6 +157,69 @@
                 
             </div>
 
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+<ngx-hm-carousel
+  [(ngModel)]="index"
+
+  [show-num]="2"
+  [data]="avatars"
+
+
+  [autoplay]="true"
+  [between-delay]="400"
+  [autoplay-speed]="3000"
+  [aniTime]="3000"
+  aniClass="transition"
+  aniClassAuto="aniAuto"
+
+  class="carousel c-accent">
+
+  <section ngx-hm-carousel-container class="content">
+    <article class="item cursor-pointer"
+      ngx-hm-carousel-item
+      *ngFor="let avatar of avatars; let i = index">
+      <div class="img"
+        [style.backgroundImage]="'url('+avatar.url+')'">
+      </div>
+    </article>
+    <ng-template #infiniteContainer></ng-template>
+  </section>
+
+  <ng-template #carouselContent let-avatar let-i="index">
+    <article class="item cursor-pointer">
+      <div class="img"
+        [style.backgroundImage]="'url('+avatar.url+')'">
+      </div>
+    </article>
+  </ng-template>
+
+
+  <ng-template #carouselDot let-model>
+    <div class="ball bg-accent" 
+      [class.visible]="model.index === model.currentIndex"></div>
+  </ng-template>
+
+ 
+
+</ngx-hm-carousel>
+<ngx-charts-bar-vertical
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="single"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  (select)="onSelect($event)">
+</ngx-charts-bar-vertical>

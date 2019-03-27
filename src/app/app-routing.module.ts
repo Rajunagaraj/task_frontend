@@ -6,6 +6,7 @@ import { CrudComponent } from './home/crud/crud.component';
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 import { EditComponent } from './home/edit/edit.component';
 import { FiltercomponetComponent } from './filtercomponet/filtercomponet.component';
+import { EmailComponent } from './email/email.component';
 const routes: Routes = [
   {
   	path : '', 
@@ -36,6 +37,10 @@ const routes: Routes = [
 {
   path : 'edituser', 
 component : EditComponent
+},
+{
+  path : 'email', 
+component : EmailComponent
 },
 {
   path: 'customers',

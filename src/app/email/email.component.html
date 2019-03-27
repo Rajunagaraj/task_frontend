@@ -1,0 +1,28 @@
+<h3>angular 6 send email example</h3>
+<form id="myform" (ngSubmit)="submitForm()">
+<label>message</label>
+<input type="text" name="message" />
+<label>from_name</label>
+<input type="text" name="from_name" />
+<label>message_html</label>
+<input type="text" name="message_html" />
+<br><br>
+<button>
+Send
+</button>
+</form>
+<!-- <form id="myform" (ngSubmit)="submitForm()" #heroForm="ngForm">
+<label>message</label>
+<input type="text" name="message"  [(ngModel)]="model.name" name="name"
+               #name="ngModel"/>
+<label>from_name</label>
+<input type="text" name="from_name"  [(ngModel)]="model.from_name" name="from_name"
+               #name="ngModel"/>
+<label>message_html</label>
+<input type="text" name="message_html"  [(ngModel)]="model.message_html" name="message_html"
+               #name="ngModel"/>
+<br><br>
+<button>
+Send
+</button>
+</form> -->

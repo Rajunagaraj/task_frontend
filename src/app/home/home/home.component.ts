@@ -1,17 +1,21 @@
 import { Router } from  '@angular/router';
 import { AuthService } from '../../service/auth.service';
 import { Component, ElementRef, ViewChild, OnInit, Inject, OnDestroy } from '@angular/core';
+import { NgxHmCarouselModule } from 'ngx-hm-carousel';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { single } from '../../data';
 declare var $;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
    @ViewChild('bidedpopupView') bidedpopupView: ElementRef;
 emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"; 
 gender = null; 
   constructor(private authService: AuthService, private router: Router) { 
+        Object.assign(this, { single })
     }
 
   ngOnInit() {
@@ -52,4 +56,33 @@ Bidalloted_popup(){
 
 }
 
+ index = 0;
+  avatars = '12345'.split('').map((x, i) => {
+    return {
+      url: `https://picsum.photos/600/400/?${i}`,
+      title: `${i}`
+    };
+  });
+
+ single: any[];
+  multi: any[];
+
+  view: any[] = [500, 400];
+
+  // options
+  showXAxis = true;
+  showYAxis = true;
+  gradient = false;
+  showLegend = true;
+  showXAxisLabel = true;
+  xAxisLabel = 'Country';
+  showYAxisLabel = true;
+  yAxisLabel = 'Population';
+
+  colorScheme = {
+    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+  };
+  onSelect(event) {
+    console.log(event);
+  }
 }
